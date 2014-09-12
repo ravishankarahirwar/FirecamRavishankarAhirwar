@@ -46,9 +46,10 @@ Uri source1, source2;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+        
         pic = (ImageView)findViewById(R.id.Layer1);
-        combineImage = (Button)findViewById(R.id.combineImage);
-        LoadImageFromGallery = (Button)findViewById(R.id.LoadImageFromGallery);
+//        combineImage = (Button)findViewById(R.id.combineImage);
+//        LoadImageFromGallery = (Button)findViewById(R.id.LoadImageFromGallery);
         
         combineImage.setOnClickListener(new OnClickListener(){
 
@@ -83,7 +84,7 @@ Uri source1, source2;
                     FileOutputStream fos = new FileOutputStream(pictureFile);
                     fos.write(data);
                     fos.close();
-                   
+                    mCamera.startPreview();
 
                     // Restart the camera preview.
 //                    safeCameraOpenInView(mCameraView);
@@ -114,6 +115,7 @@ Uri source1, source2;
         FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         preview.addView(mPreview);
     }
+    
     /** A safe way to get an instance of the Camera object. */
     public static Camera getCameraInstance(){
         Camera c = null;
@@ -125,16 +127,7 @@ Uri source1, source2;
         }
         return c; // returns null if camera is unavailable
     }
-    /** Check if this device has a camera */
-    private boolean checkCameraHardware(Context context) {
-        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)){
-            // this device has a camera
-            return true;
-        } else {
-            // no camera on this device
-            return false;
-        }
-    }
+
     
     @Override
     public void onPause() {
@@ -168,7 +161,7 @@ Uri source1, source2;
     private File getOutputMediaFile(){
 
         File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_PICTURES), "UltimateCameraGuideApp");
+                Environment.DIRECTORY_PICTURES), "UltimateCamera");
 
         if (! mediaStorageDir.exists()){
             if (! mediaStorageDir.mkdirs()){

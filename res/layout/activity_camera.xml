@@ -1,47 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-  <FrameLayout
-    android:id="@+id/camera_preview"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_weight="1"
-    >
+    android:orientation="horizontal" >
 
- 
-  </FrameLayout>
-   <ImageView 
-      android:id="@+id/Layer1"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-   android:alpha="100"
-    android:src="@drawable/ic_launcher"
-    android:layout_margin="20dp"
-      />
-   
-  <Button
-    android:id="@+id/button_capture"
-    android:text="Capture"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    
-    />
-  <Button
-    android:id="@+id/LoadImageFromGallery"
-    android:text="Gallery"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_toRightOf="@+id/button_capture"
-    />
-  <Button
-    android:id="@+id/combineImage"
-    android:text="MargeImage"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_toRightOf="@+id/LoadImageFromGallery"
-    />
-  
+    <FrameLayout
+        android:id="@+id/camera_preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/Layer1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="20dp"
+        android:alpha="100"
+        android:src="@drawable/ic_launcher"
+        android:visibility="invisible"
+         />
+
+    <Button
+        android:id="@+id/button_capture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capture" />
+
+<!--     <Button -->
+<!--         android:id="@+id/LoadImageFromGallery" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_toRightOf="@+id/button_capture" -->
+<!--         android:text="Gallery" /> -->
+
+<!--     <Button -->
+<!--         android:id="@+id/combineImage" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_toRightOf="@+id/LoadImageFromGallery" -->
+<!--         android:text="MargeImage" /> -->
+
 </RelativeLayout>

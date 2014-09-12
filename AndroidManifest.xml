@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.firecam.ravishankarahirwar.CameraActivity"
+            android:name="com.firecam.ravishankarahirwar.MotionViewsActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
